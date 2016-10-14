@@ -52,6 +52,20 @@ def parse_file
   people
 end
 
+def show_config
+  puts "Configuration:"
+  puts "  Input file:    #{@options[:input_file]}"
+  puts "  Family name:   #{@options[:family_name]}"
+  puts "  Send emails:   #{@options[:send_emails]}"
+  puts "  Verbose msgs:  #{@options[:verbose]}"
+  puts
+  puts "  SMTP Address:  #{configatron.email.smtp.address}"
+  puts "  SMTP Port:     #{configatron.email.smtp.port}"
+  puts "  SMTP Username: #{configatron.email.smtp.username}"
+  puts "  SMTP Domain:   #{configatron.email.smtp.domain}"
+  puts
+end
+
 def parse_options
   OptionParser.new do |opts|
     opts.banner = "Usage: secretsanta.rb [options]"
@@ -91,6 +105,7 @@ end
 parse_options
 people = parse_file
 family = load_family(people)
+show_config if @options[:verbose]
 santa = assign_santas(family)
 
 if @options[:send_emails] then
