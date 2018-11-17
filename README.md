@@ -19,7 +19,7 @@ You'll need to have ruby installed and a few gems.
 
 configatron
 json
-optparse
+OptionParser
 
 ## Running the tool
 
