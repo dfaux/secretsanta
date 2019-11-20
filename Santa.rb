@@ -57,9 +57,9 @@ class Santa
   def send_email(p, verbose = false, pw = '')
     msg = <<END_OF_MESSAGE
 Hey #{p.santa.name}, 
-  You have been randomly selected to be the Secret Santa for #{p.name} (me). 
-Remember though, I don't actually know that you've been chosen, so please 
-do not tell me. That means don't reply to this message. Otherwise, the 
+  You have been randomly selected to be the Secret Santa for #{p.name}. 
+Remember though, This person has no idea that you've been chosen, so please 
+do not tell them. That means don't reply to this message. Otherwise, the 
 carefully crafted surprise will be sadly busted.
 
 If you have any questions about the rules for this year, or any logistical 
